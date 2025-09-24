@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AR Fashion Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/auth.css" rel="stylesheet">
+</head>
+<body class="auth-body">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">
+                <i class="fas fa-magic text-warning me-2"></i>AR Fashion
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="products.html">Products</a>
+                <a class="nav-link" href="register.html">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-7">
+                    <div class="auth-card">
+                        <div class="auth-header text-center mb-4">
+                            <div class="auth-logo">
+                                <i class="fas fa-magic fa-3x text-primary mb-3"></i>
+                            </div>
+                            <h2 class="fw-bold">Welcome Back</h2>
+                            <p class="text-muted">Sign in to your AR Fashion account</p>
+                        </div>
+
+                        <form id="login-form" class="auth-form">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                    <input type="email" class="form-control" id="email" name="email" 
+                                           placeholder="Enter your email" required>
+                                </div>
+                                <div class="invalid-feedback" id="email-error"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                    <input type="password" class="form-control" id="password" name="password" 
+                                           placeholder="Enter your password" required>
+                                    <button class="btn btn-outline-secondary" type="button" id="toggle-password">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="invalid-feedback" id="password-error"></div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="remember-me" name="remember">
+                                        <label class="form-check-label" for="remember-me">
+                                            Remember me
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6 text-end">
+                                    <a href="#" class="text-decoration-none small" onclick="forgotPassword()">
+                                        Forgot password?
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="d-grid mb-3">
+                                <button type="submit" class="btn btn-primary btn-lg auth-btn">
+                                    <span class="btn-text">Sign In</span>
+                                    <span class="btn-loading d-none">
+                                        <i class="fas fa-spinner fa-spin me-2"></i>Signing in...
+                                    </span>
+                                </button>
+                            </div>
+
+                            <div class="text-center">
+                                <span class="text-muted">Don't have an account? </span>
+                                <a href="register.html" class="text-decoration-none fw-bold">Create Account</a>
+                            </div>
+                        </form>
+
+                        <!-- Social Login -->
+                        <div class="social-login mt-4">
+                            <div class="divider">
+                                <span>or continue with</span>
+                            </div>
+                            
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <button class="btn btn-outline-dark w-100" onclick="socialLogin('google')">
+                                        <i class="fab fa-google me-2"></i>Google
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-outline-dark w-100" onclick="socialLogin('facebook')">
+                                        <i class="fab fa-facebook me-2"></i>Facebook
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Demo Accounts -->
+                        <div class="demo-accounts mt-4">
+                            <div class="alert alert-info">
+                                <strong>Demo Accounts:</strong>
+                                <div class="mt-2">
+                                    <small class="d-block">Email: demo@arfashion.com | Password: demo123</small>
+                                    <small class="d-block">Email: admin@arfashion.com | Password: admin123</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="success-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center py-4">
+                    <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+                    <h4>Welcome Back!</h4>
+                    <p class="text-muted">You have successfully signed in to your account.</p>
+                    <button class="btn btn-primary" onclick="redirectAfterLogin()">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

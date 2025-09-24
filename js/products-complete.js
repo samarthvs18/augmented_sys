@@ -627,3 +627,39 @@ window.updateCartDisplay = function() {
     cart = JSON.parse(localStorage.getItem('fashionCart') || '[]');
     updateCartCount();
 };
+
+// Add this to your existing products-complete.js file
+function addToCart(productId) {
+    const product = allProducts.find(p => p.id === productId);
+    if (!product) return;
+    
+    // Check if user is logged in for personalized experience
+    const currentUser = window.authSystem?.getCurrentUser();
+    
+    const existingItem = cart.find(item => item.id === productId);
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            brand: product.brand,
+            category: product.category,
+            quantity: 1,
+            size: product.sizes[0] || 'M',
+            color: product.colors[0] || 'Default',
+            userId: currentUser ? currentUser.id : null,
+            addedAt: new Date().toISOString()
+        });
+    }
+    
+    // Save to user-specific cart if logged in
+    const cartKey = currentUser ? `fashionCart_${currentUser.id}` : 'fashionCart';
+    localStorage.setItem(cartKey, JSON.stringify(cart));
+    
+    updateCartCount();
+    showCartToast(product.name);
+}
