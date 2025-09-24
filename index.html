@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Fashion Store - Virtual Try-On Technology</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">
+                <i class="fas fa-magic text-warning me-2"></i>AR Fashion
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link px-3" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="ar-tryon.html">Try AR</a></li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-outline-warning rounded-pill px-3" href="cart.html">
+                            <i class="fas fa-shopping-cart me-1"></i>
+                            Cart <span class="badge bg-warning text-dark ms-1" id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="hero-content text-white">
+                        <h1 class="display-4 fw-bold mb-4 animate-fade-up">
+                            Try Clothes Virtually with 
+                            <span class="text-warning">AR Magic</span>
+                        </h1>
+                        <p class="lead mb-4 animate-fade-up" style="animation-delay: 0.3s">
+                            Experience the future of online shopping with our cutting-edge augmented reality technology. 
+                            See how clothes look on you in real-time before making a purchase!
+                        </p>
+                        <div class="hero-buttons animate-fade-up" style="animation-delay: 0.6s">
+                            <a href="products.html" class="btn btn-warning btn-lg me-3 rounded-pill px-4">
+                                <i class="fas fa-shopping-bag me-2"></i>Shop Collection
+                            </a>
+                            <a href="ar-tryon.html" class="btn btn-outline-light btn-lg rounded-pill px-4">
+                                <i class="fas fa-camera me-2"></i>Try AR Now
+                            </a>
+                        </div>
+                        
+                        <div class="hero-stats mt-5 animate-fade-up" style="animation-delay: 0.9s">
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <div class="stat-number text-warning fw-bold fs-3">500K+</div>
+                                    <div class="stat-label small">Happy Customers</div>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <div class="stat-number text-warning fw-bold fs-3">50K+</div>
+                                    <div class="stat-label small">AR Try-Ons</div>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <div class="stat-number text-warning fw-bold fs-3">95%</div>
+                                    <div class="stat-label small">Satisfaction Rate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 text-center">
+                    <div class="hero-ar-preview animate-float">
+                        <div class="ar-device-mockup">
+                            <div class="device-screen">
+                                <div class="ar-overlay-demo">
+                                    <div class="virtual-tshirt"></div>
+                                    <div class="pose-points">
+                                        <div class="pose-point" style="top: 30%; left: 35%;"></div>
+                                        <div class="pose-point" style="top: 30%; left: 65%;"></div>
+                                        <div class="pose-point" style="top: 50%; left: 50%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ar-floating-icons">
+                            <i class="fas fa-tshirt floating-icon icon-1"></i>
+                            <i class="fas fa-camera floating-icon icon-2"></i>
+                            <i class="fas fa-magic floating-icon icon-3"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="display-5 fw-bold mb-3">Revolutionary Shopping Experience</h2>
+                    <p class="lead text-muted">Advanced AR technology meets modern e-commerce</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-camera fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Real-Time AR</h5>
+                        <p class="text-muted">Use your camera to see clothes on yourself instantly with advanced pose detection</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-mobile-alt fa-3x text-success"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Mobile Optimized</h5>
+                        <p class="text-muted">Works perfectly on smartphones and tablets for shopping on the go</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-bolt fa-3x text-warning"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Instant Results</h5>
+                        <p class="text-muted">No downloads needed, works right in your browser with WebAR technology</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-palette fa-3x text-danger"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Color Variants</h5>
+                        <p class="text-muted">Try different colors and styles in real-time to find your perfect match</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="display-6 fw-bold mb-4">Cutting-Edge Technology Stack</h2>
+                    <p class="lead mb-4">Built with the latest web technologies for seamless AR experiences</p>
+                    
+                    <div class="tech-features">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="tech-icon me-3">
+                                <i class="fab fa-js-square fa-2x text-warning"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">JavaScript ES6+ & WebRTC</h6>
+                                <small class="text-muted">Real-time camera access and AR processing</small>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="tech-icon me-3">
+                                <i class="fab fa-bootstrap fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Bootstrap 5 & Responsive Design</h6>
+                                <small class="text-muted">Mobile-first approach for all devices</small>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="tech-icon me-3">
+                                <i class="fas fa-cube fa-2x text-info"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Three.js & WebGL</h6>
+                                <small class="text-muted">3D rendering and augmented reality</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 text-center">
+                    <div class="tech-visualization">
+                        <div class="tech-circle">
+                            <div class="inner-circle">
+                                <i class="fas fa-magic fa-3x text-warning"></i>
+                                <h5 class="mt-3 mb-0">AR Engine</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-gradient">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="display-6 fw-bold text-white mb-4">Ready to Experience AR Shopping?</h2>
+                    <p class="lead text-white-50 mb-4">Join thousands of customers who have revolutionized their shopping experience</p>
+                    <div class="cta-buttons">
+                        <a href="ar-tryon.html" class="btn btn-warning btn-lg me-3 rounded-pill px-5">
+                            <i class="fas fa-camera me-2"></i>Start AR Experience
+                        </a>
+                        <a href="products.html" class="btn btn-outline-light btn-lg rounded-pill px-5">
+                            <i class="fas fa-shopping-bag me-2"></i>Browse Products
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h5 class="mb-2"><i class="fas fa-magic text-warning me-2"></i>AR Fashion Store</h5>
+                    <p class="mb-0 text-muted">Advanced E-commerce with Augmented Reality Technology</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-1">&copy; 2025 AR Fashion Store. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Capstone Project - Virtual Try-On Technology Demo</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
