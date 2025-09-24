@@ -1,8 +1,8 @@
 /* Custom Properties */
 :root {
-    --primary-color: #667eea;
-    --secondary-color: #764ba2;
-    --accent-color: #ffc107;
+    --primary-color: #0c0f1f;
+    --secondary-color: #4d4d4d;
+    --accent-color: #ff8707;
     --dark-color: #2d3748;
     --light-color: #f7fafc;
     --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -331,7 +331,7 @@ body {
     left: -5px;
     right: -5px;
     bottom: -5px;
-    background: linear-gradient(45deg, #ffc107, #ff6b6b, #4ecdc4, #ffc107);
+    background: linear-gradient(45deg, #ffc107, #ff6b6b, #263937, #ffc107);
     border-radius: 50%;
     z-index: -1;
     animation: rotate 10s linear infinite reverse;
@@ -575,11 +575,11 @@ body {
 
 /* Custom Properties */
 :root {
-    --primary-color: #667eea;
-    --secondary-color: #764ba2;
+    --primary-color: #070c20;
+    --secondary-color: #757475;
     --accent-color: #ffc107;
     --dark-color: #2d3748;
-    --light-color: #f7fafc;
+    --light-color: #7fbde7;
     --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
