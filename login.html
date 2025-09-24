@@ -135,18 +135,20 @@
     </section>
 
     <!-- Success Modal -->
-    <div class="modal fade" id="success-modal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body text-center py-4">
-                    <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
-                    <h4>Welcome Back!</h4>
-                    <p class="text-muted">You have successfully signed in to your account.</p>
-                    <button class="btn btn-primary" onclick="redirectAfterLogin()">Continue Shopping</button>
-                </div>
+    <!-- Success Modal -->
+<div class="modal fade" id="success-modal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center py-4">
+                <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+                <h4>Welcome Back!</h4>
+                <p class="text-muted">You have successfully signed in to your account.</p>
+                <button class="btn btn-primary" onclick="goToProducts()">Continue Shopping</button>
             </div>
         </div>
     </div>
+</div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/auth.js"></script>

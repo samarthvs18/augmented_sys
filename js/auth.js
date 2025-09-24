@@ -387,11 +387,26 @@ class AuthSystem {
         modal.show();
     }
 
-    redirectAfterLogin() {
+    // Replace the existing redirectAfterLogin function with this:
+redirectAfterLogin() {
+    // Hide the modal first
+    const modal = bootstrap.Modal.getInstance(document.getElementById('success-modal'));
+    if (modal) {
+        modal.hide();
+    }
+    
+    // Small delay to ensure modal closes
+    setTimeout(() => {
         const urlParams = new URLSearchParams(window.location.search);
         const redirect = urlParams.get('redirect') || 'products.html';
+        
+        console.log('Redirecting to:', redirect); // Debug log
+        
+        // Force redirect
         window.location.href = redirect;
-    }
+    }, 500);
+}
+
 
     logout() {
         this.currentUser = null;
@@ -562,3 +577,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Export for global access
 window.authSystem = authSystem;
+
+// Add this new function to js/auth.js
+function goToProducts() {
+    console.log('Going to products page...'); // Debug log
+    
+    // Hide modal
+    const modal = bootstrap.Modal.getInstance(document.getElementById('success-modal'));
+    if (modal) {
+        modal.hide();
+    }
+    
+    // Force navigation to products page
+    window.location.href = 'products.html';
+}
+
+// Also add this alternative redirect function as backup
+window.redirectToProducts = function() {
+    console.log('Backup redirect function called');
+    window.location.replace('products.html');
+};
